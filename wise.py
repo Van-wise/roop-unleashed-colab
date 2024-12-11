@@ -6,15 +6,16 @@ import requests
 import zipfile
 from concurrent.futures import ThreadPoolExecutor
 from IPython.display import clear_output, display, HTML
-
+       
 models_info = [
-    ('https://github.com/karaokenerds/python-audio-separator/releases/download/v0.12.1/onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl', 'onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl', '/content/roop/'),
-    #('https://huggingface.co/countfloyd/deepfake/resolve/main/inswapper_128.onnx', 'inswapper_128.onnx', '/content/roop/checkpoints/'),
-    ('https://github.com/Hillobar/Rope/releases/download/Sapphire/inswapper_128.fp16.onnx', 'inswapper_128.fp16.onnx', '/content/roop/checkpoints/'),
-    ('https://github.com/deepinsight/insightface/releases/download/v0.7/buffalo_l.zip', 'buffalo_l.zip', '/content/'),
-    ('https://github.com/TencentARC/GFPGAN/releases/download/v1.3.4/GFPGANv1.4.pth', 'GFPGANv1.4.pth', '/content/roop/models/'),
-    ('https://github.com/xinntao/facexlib/releases/download/v0.1.0/detection_Resnet50_Final.pth', 'detection_Resnet50_Final.pth', '/content/roop/gfpgan/weights/'),
-    ('https://github.com/xinntao/facexlib/releases/download/v0.2.2/parsing_parsenet.pth', 'parsing_parsenet.pth', '/content/roop/gfpgan/weights/')
+    ('https://huggingface.co/countfloyd/deepfake/resolve/main/inswapper_128.onnx', 'inswapper_128.onnx', '/content/roop/models/'),
+    ('https://huggingface.co/countfloyd/deepfake/resolve/main/GFPGANv1.4.onnx', 'GFPGANv1.4.onnx', '/content/roop/models/'),
+    ('https://github.com/csxmli2016/DMDNet/releases/download/v1/DMDNet.pth', 'DMDNet.pth', '/content/roop/models/'),
+    ('https://huggingface.co/countfloyd/deepfake/resolve/main/rd64-uni-refined.pth', 'rd64-uni-refined.pth', '/content/roop/models/CLIP/'),
+    ('https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth', 'codeformer.pth', '/content/roop/models/CodeFormer/'),
+    ('https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/detection_Resnet50_Final.pth', 'detection_Resnet50_Final.pth', '/content/roop/models/CodeFormer/facelib/'),
+    ('https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/parsing_parsenet.pth', 'parsing_parsenet.pth', '/content/roop/models/CodeFormer/facelib/'),
+    ('https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/RealESRGAN_x2plus.pth', 'RealESRGAN_x2plus.pth', '/content/roop/models/CodeFormer/realesrgan/')
 ]
 
 def download_model(url, name, path):
