@@ -68,7 +68,7 @@ def fix():
 def install_dependencies():
     for cmd in [
         'pip install --progress-bar off --quiet /content/roop/onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl',
-        "pip install --progress-bar off --quiet gradio==3.38.0 codeformer-pip==0.0.4 ftfy pyngrok pycloudflared",
+        "pip install --progress-bar off --quiet gradio==4.44.1 codeformer-pip==0.0.4 ftfy pyngrok pycloudflared",
         'pip install --progress-bar off --quiet onnx==1.14.0 insightface==0.7.3 tk==0.1.0 customtkinter==5.2.0 gfpgan==1.3.8 protobuf==3.20.3',
         'pip install --progress-bar off --quiet --no-cache-dir -I tkinterdnd2-universal==1.7.3 tkinterdnd2==0.3.0'
     ]:
