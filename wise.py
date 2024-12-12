@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from IPython.display import clear_output, display, HTML
        
 models_info = [
+     ('https://github.com/karaokenerds/python-audio-separator/releases/download/v0.12.1/onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl', 'onnxruntime_gpu-1.17.0-cp310-cp310-linux_x86_64.whl', '/content/roop/'),
     ('https://huggingface.co/countfloyd/deepfake/resolve/main/inswapper_128.onnx', 'inswapper_128.onnx', '/content/roop/models/'),
     ('https://huggingface.co/countfloyd/deepfake/resolve/main/GFPGANv1.4.onnx', 'GFPGANv1.4.onnx', '/content/roop/models/'),
     ('https://github.com/csxmli2016/DMDNet/releases/download/v1/DMDNet.pth', 'DMDNet.pth', '/content/roop/models/'),
