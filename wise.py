@@ -260,6 +260,32 @@ def display_media(source, show_media=True, save_to_path=1, preview_duration=10):
         print(e)
         return None
 
+# -- tunnle
+def start_tunnle():
+  time.sleep(5)
+  # open("/content/output.log", "w").close()
+  # # 循环检测文件内容，直到存在"http://127.0.0.1:9090"。
+  # while not "http://127.0.0.1:7865" in open("/content/output.log", "r").read():
+  #   time.sleep(1)
+
+  clear_output()
+  
+  if ngrok_token:
+      try:
+          from pyngrok import ngrok
+          ngrok_tunnel = ngrok.connect(7680, "http")
+          print("ngrok_tunnel:", ngrok_tunnel)
+      except Exception as e:
+          print("ngrok 连接失败：", e)
+
+  if use_cloudflare:
+      try:
+          from pycloudflared import try_cloudflare
+          cloudflare_url = try_cloudflare(7680, verbose=False)
+          print("cloudflare_tunnel:", cloudflare_url)
+      except Exception as e:
+          print("cloudflare 连接失败：", e)
+    
 # -- star
 download_all_models(models_info)
 install_dependencies()
