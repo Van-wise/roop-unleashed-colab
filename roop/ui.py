@@ -147,7 +147,7 @@ def run():
                             with gr.Column(scale=1):
                                 bt_preview_mask = gr.Button("Show Mask Preview", variant='secondary')
                             with gr.Column(scale=2):
-                                maskpreview = gr.Image(label="Preview Mask", shape=(None,512), interactive=False)
+                                maskpreview = gr.Image(label="Preview Mask", interactive=False, height=512)
                             
                 with gr.Row(variant='panel'):
                     with gr.Column():
@@ -327,7 +327,7 @@ def run():
 
         restart_server = False
         try:
-            ui.queue().launch(inbrowser=True, server_name=server_name, server_port=server_port, share=roop.globals.CFG.server_share, ssl_verify=ssl_verify, prevent_thread_lock=False, show_error=True)
+            ui.queue().launch(inbrowser=True, server_name=server_name, server_port=server_port, share=True, ssl_verify=ssl_verify, prevent_thread_lock=False, show_error=True)
         except:
             restart_server = True
             run_server = False
