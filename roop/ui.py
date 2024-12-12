@@ -108,7 +108,7 @@ def run():
                         with gr.Row():
                                 bt_remove_selected_input_face = gr.Button("Remove selected")
                                 bt_clear_input_faces = gr.Button("Clear all", variant='stop')
-                        bt_srcimg = gr.Image(label='Source Face Image', type='filepath', tool=None)
+                        bt_srcimg = gr.Image(label='Source Face Image', type='filepath')
                     with gr.Column():
                         target_faces = gr.Gallery(label="Target faces", allow_preview=True, preview=True, height=128, object_fit="scale-down")
                         with gr.Row():
